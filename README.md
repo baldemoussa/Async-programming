@@ -1,24 +1,20 @@
 # Async Programming
 
-## By [Mamadou Moussa Balde](https://www.linkedin.com/in/2mb/)
+A Vite page whose results are console lines. The page itself only shows a heading.
 
-A Vite page. From this folder, `npm run dev` starts it. This run was Vite 8.2.1 at http://localhost:5173/. The tab title is **async-programming**. The only thing on the page is the heading "Async programming". `#app` stays empty. The page does not set a font or a background. In this browser the heading is Times New Roman, 32px, black. The shot is on white.
+## Description
 
-![Async programming](docs/screenshots/home.png)
+From this folder, `npm run dev` starts it. This run was Vite 8.2.1 at http://localhost:5173/. The tab title is **async-programming**. The only thing on the page is the heading "Async programming". `#app` stays empty. The page does not set a font or a background. In this browser the heading is Times New Roman, 32px, black. The shot is on white.
 
-`index.html` loads `src/main.ts`, `src/apiSimulator.ts`, and `src/api.ts`. The results are console lines. `src/closuresHigher-orderCallbacks.ts` is not loaded.
-
-## The order
+`index.html` loads `src/main.ts`, `src/apiSimulator.ts`, and `src/api.ts`. `src/closuresHigher-orderCallbacks.ts` is not loaded.
 
 `handleOrder` tries a product with quantity 1 and price -10. That throws a `PaymentError`, so the console errors `Payment Error: Invalid product price`. The `finally` block then logs `Order processing completed.`
 
 The simulator logs `Begin statement` and `End statement` right away. The three product lists arrive later:
 
-- Product details, after 500ms: Product 1 at 100 and Product 2 at 200
-- Related products, after 1000ms: Product 3 at 300 and Product 4 at 400
-- Reviews, after 1500ms: rating 5 and rating 4 for product 1, and rating 3 for product 2
-
-## JSONPlaceholder
+* Product details, after 500ms: Product 1 at 100 and Product 2 at 200
+* Related products, after 1000ms: Product 3 at 300 and Product 4 at 400
+* Reviews, after 1500ms: rating 5 and rating 4 for product 1, and rating 3 for product 2
 
 `src/api.ts` calls `https://jsonplaceholder.typicode.com`. In this run the console order was:
 
@@ -35,3 +31,51 @@ The simulator logs `Begin statement` and `End statement` right away. The three p
 `updateFullPost` logs `________________Update Full posts updateFullPost________________` and `{"id":1,"title":"Full New Post","body":"Full My new post","userId":1}`.
 
 `updatePartialPost` then logs `________________Update Partial posts updatePartialPost________________`. The title is `Partial New Post` and the body is still the original post body.
+
+## Screenshots
+
+![Async programming](docs/screenshots/home.png)
+
+## Getting Started
+
+### Dependencies
+
+* Node.js and npm
+* This run used Vite 8.2.1
+
+### Installing
+
+```bash
+npm install
+```
+
+### Executing program
+
+```bash
+npm run dev
+```
+
+This run opened http://localhost:5173/. Open the browser console to see the order above.
+
+## Help
+
+The heading is the only thing on the page. `#app` stays empty. `src/closuresHigher-orderCallbacks.ts` is not loaded by `index.html`.
+
+## Authors
+
+[Mamadou Moussa Balde](https://www.linkedin.com/in/2mb/)
+
+## Version History
+
+* Current local run
+    * Vite 8.2.1 at http://localhost:5173/
+    * Console order recorded from a cache-busted load of the scripts `index.html` includes
+
+## License
+
+This folder does not include a `LICENSE.md` file.
+
+## Acknowledgments
+
+* [JSONPlaceholder](https://jsonplaceholder.typicode.com)
+* [README template](https://gist.github.com/DomPizzie/7a5ff55ffa9081f2de27c315f5018afc)
